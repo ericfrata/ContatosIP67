@@ -18,6 +18,9 @@
 		1C003850170255420011C56C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C00384F170255420011C56C /* Default-568h@2x.png */; };
 		1C003859170256EA0011C56C /* EFFormularioContatoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C003857170256EA0011C56C /* EFFormularioContatoViewController.m */; };
 		1C00385A170256EA0011C56C /* EFFormularioContatoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C003858170256EA0011C56C /* EFFormularioContatoViewController.xib */; };
+		1C003860170277840011C56C /* EFContato.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C00385F170277840011C56C /* EFContato.m */; };
+		1C606DBA170A4E96005F7E67 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C606DB9170A4E96005F7E67 /* MessageUI.framework */; };
+		1CBB0C831703B6660077EF7C /* EFListaContatosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CBB0C821703B6660077EF7C /* EFListaContatosViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +40,12 @@
 		1C003856170256EA0011C56C /* EFFormularioContatoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EFFormularioContatoViewController.h; sourceTree = "<group>"; };
 		1C003857170256EA0011C56C /* EFFormularioContatoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EFFormularioContatoViewController.m; sourceTree = "<group>"; };
 		1C003858170256EA0011C56C /* EFFormularioContatoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EFFormularioContatoViewController.xib; sourceTree = "<group>"; };
+		1C00385E170277840011C56C /* EFContato.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EFContato.h; sourceTree = "<group>"; };
+		1C00385F170277840011C56C /* EFContato.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EFContato.m; sourceTree = "<group>"; };
+		1C1CD10D1706741400BFB2C2 /* EFListaContatosProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFListaContatosProtocol.h; sourceTree = "<group>"; };
+		1C606DB9170A4E96005F7E67 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		1CBB0C811703B6660077EF7C /* EFListaContatosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EFListaContatosViewController.h; sourceTree = "<group>"; };
+		1CBB0C821703B6660077EF7C /* EFListaContatosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EFListaContatosViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C606DBA170A4E96005F7E67 /* MessageUI.framework in Frameworks */,
 				1C00383A170255420011C56C /* UIKit.framework in Frameworks */,
 				1C00383C170255420011C56C /* Foundation.framework in Frameworks */,
 				1C00383E170255420011C56C /* CoreGraphics.framework in Frameworks */,
@@ -56,8 +66,14 @@
 		1C00382D170255420011C56C = {
 			isa = PBXGroup;
 			children = (
+				1C606DB9170A4E96005F7E67 /* MessageUI.framework */,
 				1C003856170256EA0011C56C /* EFFormularioContatoViewController.h */,
 				1C003857170256EA0011C56C /* EFFormularioContatoViewController.m */,
+				1C1CD10D1706741400BFB2C2 /* EFListaContatosProtocol.h */,
+				1CBB0C811703B6660077EF7C /* EFListaContatosViewController.h */,
+				1CBB0C821703B6660077EF7C /* EFListaContatosViewController.m */,
+				1C00385E170277840011C56C /* EFContato.h */,
+				1C00385F170277840011C56C /* EFContato.m */,
 				1C003858170256EA0011C56C /* EFFormularioContatoViewController.xib */,
 				1C00383F170255420011C56C /* ContatosIP67 */,
 				1C003838170255420011C56C /* Frameworks */,
@@ -177,6 +193,8 @@
 				1C003846170255420011C56C /* main.m in Sources */,
 				1C00384A170255420011C56C /* EFAppDelegate.m in Sources */,
 				1C003859170256EA0011C56C /* EFFormularioContatoViewController.m in Sources */,
+				1C003860170277840011C56C /* EFContato.m in Sources */,
+				1CBB0C831703B6660077EF7C /* EFListaContatosViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,6 +309,7 @@
 				1C003855170255420011C56C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

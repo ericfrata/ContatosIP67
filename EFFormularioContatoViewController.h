@@ -7,14 +7,31 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "EFContato.h"
+#import "EFListaContatosProtocol.h"
 
-@interface EFFormularioContatoViewController : UIViewController
+@interface EFFormularioContatoViewController : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+
+@property (strong, nonatomic) EFContato *contato;
+
+- (id)initWithContato:(EFContato *)contato;
+
 @property (weak, nonatomic) IBOutlet UITextField *nome;
 @property (weak, nonatomic) IBOutlet UITextField *telefone;
 @property (weak, nonatomic) IBOutlet UITextField *email;
 @property (weak, nonatomic) IBOutlet UITextField *endereco;
 @property (weak, nonatomic) IBOutlet UITextField *site;
+@property (weak, nonatomic) IBOutlet UIButton *botaoFoto;
 
-- (IBAction)CadastroContato:(UIButton*)sender;
+@property (weak, nonatomic) id<EFListaContatosProtocol> delegate;
+
+@property (strong, nonatomic) NSMutableArray *contatos;
+
+-(IBAction)selecionaFoto:(id)sender;
+
+//- (IBAction)CadastroContato:(UIButton*)sender;
+
+- (IBAction)proximoElemento:(UITextField*)textField;
+
 
 @end
