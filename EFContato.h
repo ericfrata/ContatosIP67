@@ -15,6 +15,7 @@
 @property(strong, nonatomic) NSString *email;
 @property(strong, nonatomic) NSString *endereco;
 @property(strong, nonatomic) NSString *site;
+@property(strong, nonatomic) NSString *twitter;
 
 @property(strong, nonatomic) UIImage *foto;
 

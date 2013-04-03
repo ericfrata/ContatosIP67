@@ -21,6 +21,7 @@
         [self setEndereco:[aDecoder decodeObjectForKey:@"endereco"]];
         [self setSite:[aDecoder decodeObjectForKey:@"site"]];
         [self setFoto:[aDecoder decodeObjectForKey:@"foto"]];
+        [self setTwitter:[aDecoder decodeObjectForKey:@"twitter"]];
     }
     return self;
 }
@@ -32,6 +33,7 @@
     [aCoder encodeObject:_endereco forKey:@"endereco"];
     [aCoder encodeObject:_site forKey:@"site"];
     [aCoder encodeObject:_foto forKey:@"foto"];
+    [aCoder encodeObject:_twitter forKey:@"twitter"];
 }
 
 @end

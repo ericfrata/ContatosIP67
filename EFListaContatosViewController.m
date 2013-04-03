@@ -10,10 +10,18 @@
 #import "EFListaContatosViewController.h"
 #import "EFContato.h"
 
+
 @implementation EFListaContatosViewController
 
 - (id)init {
     if (self = [super init]){
+       
+        UIImage *imageTabItem = [UIImage imageNamed:@"lista-contatos.png"];
+        
+        UITabBarItem * tabItem = [[UITabBarItem alloc] initWithTitle:@"Contatos" image:imageTabItem tag:0];
+        
+        self.tabBarItem = tabItem;
+        
         self.navigationItem.title = @"Contatos";
         UIBarButtonItem *botaoExibirFormulario = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
                                                                                                target:(self)
@@ -21,6 +29,9 @@
   
         self.navigationItem.rightBarButtonItem = botaoExibirFormulario;
         self.navigationItem.leftBarButtonItem = self.editButtonItem;
+        
+        
+        
     }
     return self;
 }
@@ -51,8 +62,8 @@
                                                             delegate:self
                                                    cancelButtonTitle:@"Cancelar"
                                               destructiveButtonTitle: nil
-                                                   otherButtonTitles:@"Ligar", @"Enviar Email", @"Vizualizar site", @"Abrir Mapa", @"Salvar Foto", nil];
-        [opcoes showInView:self.view];
+                                                   otherButtonTitles:@"Ligar", @"Enviar Email", @"Vizualizar site", @"Abrir Mapa", @"Enviar Tweet", nil];
+        [opcoes showFromTabBar: self.tabBarController.tabBar];
         
         
     }
@@ -73,15 +84,27 @@
         case 3:
             [self mostrarMapa];
             break;
+        case 4:
+            [self enviarTweet];
+            break;
         default:
             break;
     }
+}
+
+
+-(void)enviarTweet{
+    SLComposeViewController *enviador = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+    [enviador setInitialText:[NSString stringWithFormat:@"@%@", contatoSelecionado.twitter]];
+    [self presentViewController:enviador animated:YES completion:nil];
 }
 
 -(void)abrirAplicativoComURL:(NSString *) url
 {
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
 }
+
+
 
 
 -(void)ligar{
@@ -182,7 +205,16 @@
         [self.contatos removeObjectAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationMiddle];
     }
+
 }
+    
+- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath
+{
+    EFContato *contatoTemporario = [[EFContato alloc]init];
+    [self.contatos removeObjectAtIndex:sourceIndexPath.row];
+    [self.contatos insertObject:contatoTemporario atIndex:destinationIndexPath.row];
+}
+
 
 - (void) exibeFormulario
 {
@@ -196,8 +228,6 @@
     
     [self presentViewController:navigation animated:YES completion:nil];
     
-    
-
 }
 
 - (void) viewWillAppear:(BOOL)animated
@@ -205,11 +235,11 @@
     [self.tableView reloadData];
 }
 
-
 -(void) contatoAtualizado:(EFContato *)contato
 {
     NSLog(@"Atualizado: %d", [self.contatos indexOfObject:contato]);
 }
+
 
 -(void) contatoAdicionado:(EFContato *)contato{
     NSLog(@"Adicionado: %d", [self.contatos indexOfObject:contato]);

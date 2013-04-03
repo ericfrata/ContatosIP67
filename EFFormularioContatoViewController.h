@@ -22,6 +22,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *endereco;
 @property (weak, nonatomic) IBOutlet UITextField *site;
 @property (weak, nonatomic) IBOutlet UIButton *botaoFoto;
+@property (weak, nonatomic) IBOutlet UITextField *twitter;
 
 @property (weak, nonatomic) id<EFListaContatosProtocol> delegate;
 

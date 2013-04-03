@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "EFListaContatosProtocol.h"
 #import <MessageUI/MFMailComposeViewController.h>
+#import <Social/Social.h>
 
 @interface EFListaContatosViewController : UITableViewController <EFListaContatosProtocol, UIActionSheetDelegate, MFMailComposeViewControllerDelegate>
 {

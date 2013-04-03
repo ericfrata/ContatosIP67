@@ -32,6 +32,7 @@
 }
 
 
+
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     UIImage *imagemSelecionada = [info valueForKey: UIImagePickerControllerEditedImage];
@@ -49,6 +50,7 @@
         self.email.text = contato.email;
         self.endereco.text = contato.endereco;
         self.site.text = contato.site;
+        self.twitter.text = contato.twitter;
         if(contato.foto){
             [_botaoFoto setImage:contato.foto forState:UIControlStateNormal];
         }
@@ -108,8 +110,14 @@
     else if(campo == [self endereco]){
         [[self site] becomeFirstResponder];
     }
-      else if(campo == [self site]){
+    else if(campo == [self site]){
+        [[self twitter] becomeFirstResponder];
+    }
+       else if(campo == [self endereco]){
         [self pegaDadosDoFormulario];
+
+   //   else if(campo == [self twitter]){
+   //    [self pegaDadosDoFormulario];
     }
     
 }
@@ -137,7 +145,6 @@
     
     if(_botaoFoto.imageView.image){
         contato.foto = _botaoFoto.imageView.image;
-        
     }
 
     contato.nome = self.nome.text;
@@ -145,9 +152,7 @@
     contato.email = self.email.text;
     contato.endereco = self.endereco.text;
     contato.site = self.site.text;
-
-
-
+    contato.twitter = self.twitter.text;
 
     //NSLog(@"%@", contato.nome);
     
@@ -165,6 +170,7 @@
     {
         [self.delegate contatoAtualizado:contatoAtualizado];
     }
+    
 }
 
 @end
