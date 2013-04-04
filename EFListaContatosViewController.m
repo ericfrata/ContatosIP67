@@ -9,7 +9,7 @@
 #import "EFFormularioContatoViewController.h"
 #import "EFListaContatosViewController.h"
 #import "EFContato.h"
-
+#import "EFContatoCell.h"
 
 @implementation EFListaContatosViewController
 
@@ -38,12 +38,17 @@
 
 -(void)viewDidLoad
 {
+    [self.tableView registerNib:[UINib nibWithNibName:@"EFContatoCell"
+                                               bundle:[NSBundle mainBundle]]
+         forCellReuseIdentifier:(NSStringFromClass(([EFContatoCell class])))];
+    
     [super viewDidLoad];
     
     UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self
                                                                                             action:@selector(exibeMaisAcoes:)];
     
     [self.tableView addGestureRecognizer:longPress];
+    self.tableView.rowHeight = 94;
     
 }
 
@@ -171,17 +176,18 @@
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    static NSString *cellIdentifier = @"Cell";
+    //static NSString *cellIdentifier = @"Cell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    EFContatoCell *cell = (EFContatoCell*)[tableView dequeueReusableCellWithIdentifier:@"EFContatoCell"];
     
-    if (!cell){
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
-    }
+   // if (!cell){
+   //     cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+   // }
     
     EFContato *contato = [self.contatos objectAtIndex:indexPath.row];
     
-    cell.textLabel.text = contato.nome;
+    //cell.textLabel.text = contato.nome;
+    [cell setContato:contato];
     
     return cell;
         

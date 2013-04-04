@@ -18,6 +18,9 @@
 		1C003859170256EA0011C56C /* EFFormularioContatoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C003857170256EA0011C56C /* EFFormularioContatoViewController.m */; };
 		1C00385A170256EA0011C56C /* EFFormularioContatoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C003858170256EA0011C56C /* EFFormularioContatoViewController.xib */; };
 		1C003860170277840011C56C /* EFContato.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C00385F170277840011C56C /* EFContato.m */; };
+		1C11DABC170CE1110042CBDC /* EFContatoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C11DABB170CE1110042CBDC /* EFContatoCell.m */; };
+		1C11DABE170CE20F0042CBDC /* EFContatoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C11DABD170CE20F0042CBDC /* EFContatoCell.xib */; };
+		1C11DAC2170CE6260042CBDC /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C11DAC1170CE6260042CBDC /* back.png */; };
 		1C606DBA170A4E96005F7E67 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C606DB9170A4E96005F7E67 /* MessageUI.framework */; };
 		1CADC4CE170B92690017DE12 /* FF_AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CADC4CD170B92690017DE12 /* FF_AppDelegate.m */; };
 		1CADC4D1170B94B20017DE12 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CADC4D0170B94B20017DE12 /* Social.framework */; };
@@ -53,6 +56,10 @@
 		1C003858170256EA0011C56C /* EFFormularioContatoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EFFormularioContatoViewController.xib; sourceTree = "<group>"; };
 		1C00385E170277840011C56C /* EFContato.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EFContato.h; sourceTree = "<group>"; };
 		1C00385F170277840011C56C /* EFContato.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EFContato.m; sourceTree = "<group>"; };
+		1C11DABA170CE1110042CBDC /* EFContatoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EFContatoCell.h; sourceTree = "<group>"; };
+		1C11DABB170CE1110042CBDC /* EFContatoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EFContatoCell.m; sourceTree = "<group>"; };
+		1C11DABD170CE20F0042CBDC /* EFContatoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EFContatoCell.xib; sourceTree = "<group>"; };
+		1C11DAC1170CE6260042CBDC /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
 		1C1CD10D1706741400BFB2C2 /* EFListaContatosProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFListaContatosProtocol.h; sourceTree = "<group>"; };
 		1C606DB9170A4E96005F7E67 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		1CADC4CD170B92690017DE12 /* FF_AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FF_AppDelegate.m; sourceTree = "<group>"; };
@@ -104,6 +111,9 @@
 				1C1CD10D1706741400BFB2C2 /* EFListaContatosProtocol.h */,
 				1CBB0C811703B6660077EF7C /* EFListaContatosViewController.h */,
 				1CBB0C821703B6660077EF7C /* EFListaContatosViewController.m */,
+				1C11DABA170CE1110042CBDC /* EFContatoCell.h */,
+				1C11DABB170CE1110042CBDC /* EFContatoCell.m */,
+				1C11DABD170CE20F0042CBDC /* EFContatoCell.xib */,
 				1CADC4D4170B9AAF0017DE12 /* EFContatosNoMapaViewController.h */,
 				1CADC4D5170B9AAF0017DE12 /* EFContatosNoMapaViewController.m */,
 				1CADC4D6170B9AAF0017DE12 /* EFContatosNoMapaViewController.xib */,
@@ -161,6 +171,7 @@
 		1CADC4EC170B9CFB0017DE12 /* Imagens */ = {
 			isa = PBXGroup;
 			children = (
+				1C11DAC1170CE6260042CBDC /* back.png */,
 				1CADC4D9170B9CAF0017DE12 /* Default.png */,
 				1CADC4DA170B9CAF0017DE12 /* Default@2x.png */,
 				1CADC4DB170B9CAF0017DE12 /* gps.png */,
@@ -242,6 +253,8 @@
 				1CADC4E8170B9CB00017DE12 /* mapa-contatos.png in Resources */,
 				1CADC4E9170B9CB00017DE12 /* mapa-contatos@2x.png in Resources */,
 				1CADC4EA170B9CB00017DE12 /* Vila Mariana.gpx in Resources */,
+				1C11DABE170CE20F0042CBDC /* EFContatoCell.xib in Resources */,
+				1C11DAC2170CE6260042CBDC /* back.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,6 +271,7 @@
 				1CBB0C831703B6660077EF7C /* EFListaContatosViewController.m in Sources */,
 				1CADC4CE170B92690017DE12 /* FF_AppDelegate.m in Sources */,
 				1CADC4D7170B9AAF0017DE12 /* EFContatosNoMapaViewController.m in Sources */,
+				1C11DABC170CE1110042CBDC /* EFContatoCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

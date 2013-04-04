@@ -10,20 +10,18 @@
 
 @implementation EFContatoCell
 
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
+- (void)setContato: (EFContato *) contato;
 {
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self) {
-        // Initialization code
+    self.labelNome.text = contato.nome;
+    self.labelEmail.text = contato.email;
+    self.labelTwitter.text = contato.twitter;
+    if(contato.foto){
+        self.imageFoto.image = contato.foto;
     }
-    return self;
-}
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated
-{
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+    else{
+        self.imageFoto.image =  [UIImage imageNamed:@"lista-contatos.png"];
+    }
+    
 }
 
 @end

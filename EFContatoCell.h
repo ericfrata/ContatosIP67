@@ -7,7 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "EFContato.h"
 
 @interface EFContatoCell : UITableViewCell
+
+
+@property (weak, nonatomic) IBOutlet UILabel *labelNome;
+@property (weak, nonatomic) IBOutlet UILabel *labelEmail;
+@property (weak, nonatomic) IBOutlet UILabel *labelTwitter;
+@property (weak, nonatomic) IBOutlet UIImageView *imageFoto;
+
+
+
+- (void)setContato: (EFContato *) contato;
 
 @end

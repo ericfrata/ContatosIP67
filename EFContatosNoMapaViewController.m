@@ -15,21 +15,25 @@
 
 @implementation EFContatosNoMapaViewController
 
--(void) viewDidLoad{
-    MKUserTrackingBarButtonItem *botaoLocalizacao = [[MKUserTrackingBarButtonItem alloc]initWithMapView:self.mapa];
-    self.navigationItem.leftBarButtonItem = botaoLocalizacao;
-    
-}
--(id)init {
+
+- (id)init
+{
     self = [super init];
-    
-    if(self){
-        UIImage *imagemTabItem = [UIImage imageNamed:@"mapa-contatos.png"];
-        UITabBarItem *tabItem = [[UITabBarItem alloc]initWithTitle:@"Mapa" image:imagemTabItem tag:0];
+    if (self) {
+        
+        UIImage *imageTabItem = [UIImage imageNamed:@"mapa-contatos.png"];
+        UITabBarItem *tabItem = [[UITabBarItem alloc] initWithTitle:@"Mapa" image:imageTabItem tag:0];
+        
         self.tabBarItem = tabItem;
         self.navigationItem.title = @"Localização";
+        
     }
     return self;
 }
 
+-(void)viewDidLoad{
+    [super viewDidLoad];
+    MKUserTrackingBarButtonItem *botaoLocalizacao = [[MKUserTrackingBarButtonItem alloc] initWithMapView:self.mapa];
+    self.navigationItem.leftBarButtonItem = botaoLocalizacao;
+}
 @end
