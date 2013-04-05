@@ -35,7 +35,8 @@
     
     //-------------------------------------------ˆ
     
-    
+
+
     
     //Criar instancia do form para iniciá-lo.
     //FF_FormularioContatoViewController *form = [[FF_FormularioContatoViewController alloc] init];
@@ -55,6 +56,8 @@
    // self.window.rootViewController =nav;
     
     EFContatosNoMapaViewController *contatosMapa = [[EFContatosNoMapaViewController alloc] init];
+    
+    contatosMapa.contatos = _contatos;
     
     UINavigationController *mapaNavigation = [[UINavigationController alloc] initWithRootViewController:contatosMapa];
     

@@ -23,12 +23,17 @@
 @property (weak, nonatomic) IBOutlet UITextField *site;
 @property (weak, nonatomic) IBOutlet UIButton *botaoFoto;
 @property (weak, nonatomic) IBOutlet UITextField *twitter;
+@property (weak, nonatomic) IBOutlet UITextField *latitude;
+@property (weak, nonatomic) IBOutlet UITextField *longitude;
+
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loading;
 
 @property (weak, nonatomic) id<EFListaContatosProtocol> delegate;
 
 @property (strong, nonatomic) NSMutableArray *contatos;
 
 -(IBAction)selecionaFoto:(id)sender;
+-(IBAction)buscarCoordenadas:(id)sender;
 
 //- (IBAction)CadastroContato:(UIButton*)sender;
 

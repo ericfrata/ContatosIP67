@@ -22,8 +22,22 @@
         [self setSite:[aDecoder decodeObjectForKey:@"site"]];
         [self setFoto:[aDecoder decodeObjectForKey:@"foto"]];
         [self setTwitter:[aDecoder decodeObjectForKey:@"twitter"]];
+        [self setLatitude:[aDecoder decodeObjectForKey:@"latitude"]];
+        [self setLongitude:[aDecoder decodeObjectForKey:@"longitude"]];
     }
     return self;
+}
+
+-(CLLocationCoordinate2D)coordinate{
+    return CLLocationCoordinate2DMake([_latitude doubleValue], [_longitude doubleValue]);
+}
+
+-(NSString *) title{
+    return _nome;
+}
+
+-(NSString *) subtitle{
+    return _twitter;
 }
 
 -(void) encodeWithCoder:(NSCoder *)aCoder{
@@ -34,6 +48,8 @@
     [aCoder encodeObject:_site forKey:@"site"];
     [aCoder encodeObject:_foto forKey:@"foto"];
     [aCoder encodeObject:_twitter forKey:@"twitter"];
+    [aCoder encodeObject:_latitude forKey:@"latitude"];
+    [aCoder encodeObject:_longitude forKey:@"longitude"];
 }
 
 @end

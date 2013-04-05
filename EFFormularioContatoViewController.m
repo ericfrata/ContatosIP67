@@ -8,6 +8,7 @@
 
 #import "EFFormularioContatoViewController.h"
 #import "EFContato.h"
+#import <CoreLocation/CoreLocation.h>
 
 @interface EFFormularioContatoViewController ()
        
@@ -31,7 +32,21 @@
     return self;
 }
 
-
+-(IBAction)buscarCoordenadas:(UIButton*)botao{
+    [_loading startAnimating];
+    [botao setHidden:YES];
+    CLGeocoder *geocoder = [[CLGeocoder alloc]init];
+    [geocoder geocodeAddressString:_endereco.text completionHandler:^(NSArray *resultados, NSError *error) {
+        if (error == nil && [resultados count] > 0){
+            CLPlacemark *resultado = [resultados objectAtIndex:0];
+            CLLocationCoordinate2D coordenada = resultado.location.coordinate;
+                                                 _latitude.text = [NSString stringWithFormat:@"%f", coordenada.latitude];
+                                                 _longitude.text = [NSString stringWithFormat:@"%f", coordenada.longitude];
+        }
+        [_loading stopAnimating];
+        [botao setHidden:NO];
+    }];
+}
 
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
@@ -43,6 +58,16 @@
 
 -(void) viewDidLoad
 {
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                              selector:@selector(tecladoApareceu:)
+                                                  name:UIKeyboardDidShowNotification
+                                                object:nil];
+     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(tecladoSumiu:)
+                                                 name:UIKeyboardDidHideNotification
+                                               object:nil];
+    
+    
     if (self.contato)
     {
         self.nome.text = contato.nome;
@@ -51,12 +76,17 @@
         self.endereco.text = contato.endereco;
         self.site.text = contato.site;
         self.twitter.text = contato.twitter;
+        self.latitude.text = [contato.latitude stringValue];
+        self.longitude.text = [contato.longitude stringValue];
+        
         if(contato.foto){
             [_botaoFoto setImage:contato.foto forState:UIControlStateNormal];
         }
+
         
     }
 }
+
 
 - (id)init {
     self =[super init];
@@ -154,9 +184,17 @@
     contato.site = self.site.text;
     contato.twitter = self.twitter.text;
 
+    contato.latitude = [NSNumber numberWithFloat:[_latitude.text floatValue]];
+    contato.longitude = [NSNumber numberWithFloat:[_longitude.text floatValue]];
+    
+    
     //NSLog(@"%@", contato.nome);
     
     return self.contato;
+    
+}
+
+-(IBAction)bucarCoordenadas:(id)sender{
     
 }
 
@@ -171,6 +209,27 @@
         [self.delegate contatoAtualizado:contatoAtualizado];
     }
     
+}
+
+
+-(void)tecladoApareceu: (NSNotification*) notification
+{
+    NSLog(@"Um teclado qualquer apareceu na tela");
+}
+
+-(void)tecladoSumiu: (NSNotification*) notification
+{
+    NSLog(@"Um teclado qualquer sumiu da tela");
+}
+
+
+-(void)viewDidUnload {
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:UIKeyboardDidShowNotification
+                                                  object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:UIKeyboardDidHideNotification
+                                                  object:nil];
 }
 
 @end

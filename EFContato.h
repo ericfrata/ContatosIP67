@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <MapKit/MKAnnotation.h>
 
-@interface EFContato : NSObject<NSCoding> //NSCoding = contrato / interface
+@interface EFContato : NSObject<MKAnnotation> //NSCoding = contrato / interface 
 
 @property(strong, nonatomic) NSString *nome;
 @property(strong, nonatomic) NSString *telefone;
@@ -16,6 +17,10 @@
 @property(strong, nonatomic) NSString *endereco;
 @property(strong, nonatomic) NSString *site;
 @property(strong, nonatomic) NSString *twitter;
+
+@property(strong, nonatomic) NSNumber *latitude;
+@property(strong, nonatomic) NSNumber *longitude;
+
 
 @property(strong, nonatomic) UIImage *foto;
 

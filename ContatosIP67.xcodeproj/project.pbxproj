@@ -37,6 +37,8 @@
 		1CADC4E9170B9CB00017DE12 /* mapa-contatos@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CADC4E0170B9CB00017DE12 /* mapa-contatos@2x.png */; };
 		1CADC4EA170B9CB00017DE12 /* Vila Mariana.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 1CADC4E1170B9CB00017DE12 /* Vila Mariana.gpx */; };
 		1CBB0C831703B6660077EF7C /* EFListaContatosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CBB0C821703B6660077EF7C /* EFListaContatosViewController.m */; };
+		1CBB4AF1170E395600EF2F17 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CBB4AF0170E395600EF2F17 /* CoreLocation.framework */; };
+		1CBF2031170D0C2500AC9299 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CBF2030170D090100AC9299 /* TPKeyboardAvoidingScrollView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,7 +65,6 @@
 		1C1CD10D1706741400BFB2C2 /* EFListaContatosProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFListaContatosProtocol.h; sourceTree = "<group>"; };
 		1C606DB9170A4E96005F7E67 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		1CADC4CD170B92690017DE12 /* FF_AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FF_AppDelegate.m; sourceTree = "<group>"; };
-		1CADC4CF170B92830017DE12 /* FF_AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = FF_AppDelegate.h; path = ../../../Downloads/FF_AppDelegate.h; sourceTree = "<group>"; };
 		1CADC4D0170B94B20017DE12 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		1CADC4D2170B99F40017DE12 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		1CADC4D4170B9AAF0017DE12 /* EFContatosNoMapaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EFContatosNoMapaViewController.h; sourceTree = "<group>"; };
@@ -80,6 +81,10 @@
 		1CADC4E1170B9CB00017DE12 /* Vila Mariana.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "Vila Mariana.gpx"; path = "../Vila Mariana.gpx"; sourceTree = "<group>"; };
 		1CBB0C811703B6660077EF7C /* EFListaContatosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EFListaContatosViewController.h; sourceTree = "<group>"; };
 		1CBB0C821703B6660077EF7C /* EFListaContatosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EFListaContatosViewController.m; sourceTree = "<group>"; };
+		1CBB4AF0170E395600EF2F17 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		1CBF202E170CFF0100AC9299 /* FF_AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FF_AppDelegate.h; sourceTree = "<group>"; };
+		1CBF202F170D090100AC9299 /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
+		1CBF2030170D090100AC9299 /* TPKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingScrollView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1CBB4AF1170E395600EF2F17 /* CoreLocation.framework in Frameworks */,
 				1CADC4D3170B99F40017DE12 /* MapKit.framework in Frameworks */,
 				1CADC4D1170B94B20017DE12 /* Social.framework in Frameworks */,
 				1C606DBA170A4E96005F7E67 /* MessageUI.framework in Frameworks */,
@@ -102,6 +108,9 @@
 		1C00382D170255420011C56C = {
 			isa = PBXGroup;
 			children = (
+				1CBB4AF0170E395600EF2F17 /* CoreLocation.framework */,
+				1CBF202F170D090100AC9299 /* TPKeyboardAvoidingScrollView.h */,
+				1CBF2030170D090100AC9299 /* TPKeyboardAvoidingScrollView.m */,
 				1CADC4EC170B9CFB0017DE12 /* Imagens */,
 				1CADC4D2170B99F40017DE12 /* MapKit.framework */,
 				1CADC4D0170B94B20017DE12 /* Social.framework */,
@@ -147,7 +156,7 @@
 		1C00383F170255420011C56C /* ContatosIP67 */ = {
 			isa = PBXGroup;
 			children = (
-				1CADC4CF170B92830017DE12 /* FF_AppDelegate.h */,
+				1CBF202E170CFF0100AC9299 /* FF_AppDelegate.h */,
 				1CADC4CD170B92690017DE12 /* FF_AppDelegate.m */,
 				1C003840170255420011C56C /* Supporting Files */,
 			);
@@ -265,6 +274,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1CBF2031170D0C2500AC9299 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				1C003846170255420011C56C /* main.m in Sources */,
 				1C003859170256EA0011C56C /* EFFormularioContatoViewController.m in Sources */,
 				1C003860170277840011C56C /* EFContato.m in Sources */,
